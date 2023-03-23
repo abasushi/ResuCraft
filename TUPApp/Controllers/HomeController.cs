@@ -162,6 +162,11 @@ namespace TUPApp.Controllers
             return View(vm);
         }
 
+        public IActionResult CreateResume()
+        {
+            return View();
+        }
+
 
         [HttpPost]
         public IActionResult Insert(HomeModel model)
