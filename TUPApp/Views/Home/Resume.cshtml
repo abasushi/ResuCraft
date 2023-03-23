@@ -1,0 +1,153 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model TUPApp.Models.HomeViewModel
+
+@{
+    ViewData["Title"] = "Resume";
+}
+
+<div class="resumeContainer">
+    <div class="resumeGrid">
+        <div class="resumeLeft">
+            <div class="title">
+                <h1>Profile</h1>
+            </div>
+
+            <div class="resumeCard">
+                <div class="studentName">
+                    <h1>@Model.FirstName @Model.MiddleName @Model.LastName</h1>
+                </div>
+
+                <div class="studentInfo">
+                    <div class="contact">
+                        <i class="bi bi-house-door-fill"></i>
+                        <p>@Model.Address</p>
+                    </div>
+                    
+                    <div class="contact">
+                        <i class="bi bi-telephone-fill"></i>
+                        <p>@Model.Contact</p>
+                    </div>
+                    
+                    <div class="contact">
+                        <i class="bi bi-envelope-fill"></i>
+                        <p>@Model.Email</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="title">
+                <h1>Skills</h1>
+            </div>
+
+            <div class="resumeCard">
+                @foreach (var item in Model.Skills)
+                {
+                    <ul>
+                        <li>@item.Skill</li>
+                    </ul>
+                }
+            </div>
+
+            <div class="title">
+                <h1>Emergency Contact</h1>
+            </div>
+
+            
+                @foreach (var item in Model.EmergencyContact)
+                {
+                <div class="resumeCard">
+                    <div class="emergencyContact">
+                        <p class="emergencyName">@item.EmergencyName</p>
+                        <p>@item.EmergencyNumber</p>
+                        <p>@item.Relationship</p>
+                    </div>
+                </div>
+                }
+            
+        </div>
+
+        <div class="resumeRight">
+            <div class="title">
+                <h1>Career Objective</h1>
+            </div>
+
+            <div class="resumeCard">
+                <div class="studentObjective">
+                    <p>@Model.CareerObjective</p>
+                </div>
+            </div>
+            
+            <div class="title">
+                <h1>Educational Background</h1>
+            </div>
+
+            
+            @foreach (var item in Model.EducationalBackground)
+            {
+            <div class="resumeCard">
+                <div class="educBG">
+                    <div class="education">
+                        <p>@item.EducationalAttainment</p>
+
+                        <div class="educationYear">
+                            <p>@item.YearStarted</p>
+                            <p> - </p>
+                            <p>@item.YearGraduated</p>
+                        </div>
+                    </div>
+
+                    <div class="schoolInfo">
+                        <p>@item.School</p>
+                        <p>@item.Address</p>
+                    </div>
+                </div>
+            </div>
+            }
+            
+
+            <div class="title">
+                <h1>Experience</h1>
+            </div>
+
+            
+            <div class="resumeCard">
+                @foreach (var item in Model.Experience)
+                {
+                    
+                        <div class="experience">
+                            <div class="experienceName">
+                                <p>@item.Experience1</p>
+                            </div>
+
+                            <div class="experienceYear">
+                                <p>@item.YearStarted</p>
+                                <p> - </p>
+                                <p>@item.YearEnded</p>
+                            </div>
+                        </div>
+                    
+                }
+            </div>
+            
+
+            <div class="title">
+                <h1>Trainings Attended</h1>
+            </div>
+
+            <div class="resumeCard">
+                @foreach (var item in Model.TrainingsAttended)
+                {
+                            
+                        <div class="training">
+                            <p>@item.Training</p>
+                            <p>@item.YearAttended</p>
+                        </div>
+                    
+                }
+            </div>
+        </div>
+    </div>
+</div>

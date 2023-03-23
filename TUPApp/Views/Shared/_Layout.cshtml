@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] | ResuCraft</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TUPApp.styles.css" asp-append-version="true" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="bigWrapper">
+            <div class="navContainer">
+                <div class="logo">
+                    <a asp-area="" asp-controller="Home" asp-action="Index">ResuCraft</a>
+                </div>
+
+                @*<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>*@
+
+                <div class="links">
+                    <ul>
+                        <li class="navItem">
+                            <a class="underline" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+
+                        <li class="navItem">
+                            <a class="underline" asp-area="" asp-controller="Home" asp-action="Resume">Create</a>
+                        </li>
+
+                        <li class="navItem">
+                            <a class="underline" asp-area="" asp-controller="Home" asp-action="Resume">View</a>
+                        </li>
+
+                        @* For Hamburger Menu
+                        <div class="overlay"></div>
+                        <div class="hamburgerMenu">
+                            <div class="bar"></div>
+                        </div>*@
+
+                        @* Database Navigation
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Students" asp-action="Index">Student</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="EducationalBackgrounds" asp-action="Index">Education Background</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Skills" asp-action="Index">Skills</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Experiences" asp-action="Index">Experience</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="TrainingsAttendeds" asp-action="Index">TrainingsAttended</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="EmergencyContacts" asp-action="Index">Emergency Contact</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Sample" asp-action="Index">About</a>
+                        </li>*@
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div>
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <div class="footerContainer">
+            <h1>ResuCraft</h1>
+            <span class="footerDivider"></span>
+
+            <div class="footerRow">
+                <div class="footerColumn">
+                    <h3>Database</h3>
+                    <ul>
+                        <li><a asp-area="" asp-controller="Students" asp-action="Index" target="_blank" class="underline">Student</a></li>
+                        <li><a asp-area="" asp-controller="EducationalBackgrounds" asp-action="Index" target="_blank" class="underline">Educational Background</a></li>
+                        <li><a asp-area="" asp-controller="Skills" asp-action="Index" target="_blank" class="underline">Skills</a></li>
+                        <li><a asp-area="" asp-controller="Experiences" asp-action="Index" target="_blank" class="underline">Experience</a></li>
+                        <li><a asp-area="" asp-controller="TrainingsAttendeds" asp-action="Index" target="_blank" class="underline">Trainings Attended</a></li>
+                        <li><a asp-area="" asp-controller="EmergencyContacts" asp-action="Index" target="_blank" class="underline">Emergency Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footerColumn">
+                    <h3>Socials</h3>
+                    <ul>
+                        <li>
+                            <a href="https://abasushi.github.io"
+                               target="_blank" class="underline">Github</a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/seanabalora/" target="_blank"
+                               class="underline">Instagram</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footerColumn">
+                    <h3>Say Hi!</h3>
+
+                    <div class="e-mail">
+                        <h2 class="underline" id="copy-email">seanabalora@gmail.com</h2>
+                        <div class="popup">
+                            <h4>Copied to Clipboard!</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <span class="footerDivider"></span>
+
+            <div class="footerRightsContainer">
+                <div class="footerLogo">
+                    <a href="#"><h3>ResuCraft</h3></a>
+                </div>
+
+                <div class="footerRights">
+                    <p>Sean David Abalora &copy; 2023</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
